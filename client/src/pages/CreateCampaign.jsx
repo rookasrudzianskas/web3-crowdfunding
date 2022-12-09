@@ -24,6 +24,13 @@ const CreateCampaign = ({}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        checkIfImage(form.image, async (exists) => {
+            if(exists) {
+                setIsLoading(true);
+
+            }
+        })
     }
 
         return (
