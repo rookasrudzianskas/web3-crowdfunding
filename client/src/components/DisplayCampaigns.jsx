@@ -1,9 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const DisplayCampaigns = ({}) => {
+import { loader } from '../assets';
+
+
+const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
     return (
         <div>
-
+            <h1>Display Campaigns</h1>
         </div>
     );
 };
