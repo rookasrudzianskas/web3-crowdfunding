@@ -77,6 +77,13 @@ const CampaignDetails = ({}) => {
                         </div>
                     </div>
                 </div>
+
+                <div className="flex-1">
+                    <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Fund</h4>
+
+
+                </div>
+
             </div>
 
 
