@@ -3,7 +3,7 @@ import { loader } from '../assets';
 
 const Loader = ({}) => {
     return (
-        <div>
+        <div className="fixed inset-0">
 
         </div>
     );
