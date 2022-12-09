@@ -18,6 +18,25 @@ const CampaignDetails = ({}) => {
 
     const remainingDays = daysLeft(state.deadline);
 
+    const fetchDonators = async () => {
+        const data = await getDonations(state.pId);
+
+        setDonators(data);
+    }
+
+    useEffect(() => {
+        if(contract) fetchDonators();
+    }, [contract, address]);
+
+    const handleDonate = async () => {
+        setIsLoading(true);
+
+        await donate(state.pId, amount);
+
+        navigate('/');
+        setIsLoading(false);
+    }
+
     return (
         <div>
             {isLoading && '<Loader />'}
@@ -100,6 +119,13 @@ const CampaignDetails = ({}) => {
                                 <h4 className="font-epilogue font-semibold text-[14px] leading-[22px] text-white">Back it because you believe in it.</h4>
                                 <p className="mt-[20px] font-epilogue font-normal leading-[22px] text-[#808191]">Your contribution will be used for the campaign purpose and the public can see your contribution.</p>
                             </div>
+
+                            <CustomButton
+                                btnType="button"
+                                title="Fund Campaign"
+                                styles="w-full bg-[#8c6dfd]"
+                                handleClick={handleDonate}
+                            />
                         </div>
                     </div>
                 </div>
