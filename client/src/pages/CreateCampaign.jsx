@@ -78,7 +78,7 @@ const CreateCampaign = ({}) => {
                         placeholder="End Date"
                         inputType="date"
                         value={form.deadline}
-                        // handleChange={(e) => handleFormFieldChange('deadline', e)}
+                        handleChange={(e) => handleFormFieldChange('deadline', e)}
                     />
                 </div>
 
