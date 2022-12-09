@@ -38,6 +38,47 @@ const CampaignDetails = ({}) => {
                 </div>
             </div>
 
+            <div className="mt-[60px] flex lg:flex-row flex-col gap-5">
+                <div className="flex-[2] flex flex-col gap-[40px]">
+                    <div>
+                        <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Creator</h4>
+
+                        <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
+                            <div className="w-[52px] h-[52px] items-center justify-center flex rounded-full bg-[#3c2f32] cursor-pointer">
+                                <img src={'https://yt3.ggpht.com/IQ4OqurVrPmACaf3h5fgTcRInn6QoHz0xN4O5qzhuhY7UKgpDg2A4mGyhWW5vcaGSiVbf_FLdQ=s900-c-k-c0x00ffffff-no-rj'} alt="rokas" className="w-[60%] h-[60%] object-contain"/>
+                            </div>
+                            <div>
+                                <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{state.owner}</h4>
+                                <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">10 Campaigns</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Story</h4>
+
+                        <div className="mt-[20px]">
+                            <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">{state.description}</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Donators</h4>
+
+                        <div className="mt-[20px] flex flex-col gap-4">
+                            {donators.length > 0 ? donators.map((item, index) => (
+                                <div key={`${item.donator}-${index}`} className="flex justify-between items-center gap-4">
+                                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.donator}</p>
+                                    <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{item.donation}</p>
+                                </div>
+                            )) : (
+                                <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">No donators yet. Be the first one!</p>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     );
