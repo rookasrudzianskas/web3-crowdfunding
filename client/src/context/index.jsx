@@ -31,7 +31,12 @@ export const StateContextProvider = ({ children }) => {
     }
 
     return (
-        <StateContext.Provider value={{ address, connect, createCampaign }}>
+        <StateContext.Provider value={{
+            address,
+            contract,
+            connect,
+            createCampaign: publishCampaign,
+        }}>
             {children}
         </StateContext.Provider>
     )
