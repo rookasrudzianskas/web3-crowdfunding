@@ -71,7 +71,7 @@ export const StateContextProvider = ({ children }) => {
             parsedDonations.push({
                 donator: donations[0][i],
                 donation: ethers.utils.formatEther(donations[1][i].toString())
-            })
+            });
         }
 
         return parsedDonations;
